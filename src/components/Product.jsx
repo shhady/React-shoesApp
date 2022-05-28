@@ -45,7 +45,7 @@ export default class Product extends Component {
                 <input
                   onChange={this.handleOnChangePrice}
                   value={this.state.Price}
-                  placeholder="change price"
+                  placeholder="change Price"
                 />
               )}
               {this.state.inputshow && (
@@ -57,10 +57,15 @@ export default class Product extends Component {
               )}
             </div>
             <div>
-              <button onClick={() => this.props.handleDelete(this.props.id)}>
+              <button
+                className="btn"
+                onClick={() => this.props.handleDelete(this.props.id)}
+              >
                 Delete
               </button>
-              <button onClick={this.handleUpdateClick}>Update</button>
+              <button className="btn" onClick={this.handleUpdateClick}>
+                Update
+              </button>
             </div>
           </div>
         </div>

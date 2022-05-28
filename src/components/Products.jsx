@@ -11,11 +11,11 @@ class Products extends React.Component {
     newPrice: "",
     newSize: "",
     newImg: "",
-    isSpinning: false,
+    isSpinning: true,
   };
   async componentDidMount() {
     const data = await shoesAPI.get("/shoes");
-    this.setState({ allProducts: data.data }, () => {
+    this.setState({ allProducts: data.data, isSpinning: false }, () => {
       console.log(this.state.allProducts);
     });
   }
@@ -108,18 +108,21 @@ class Products extends React.Component {
       <div className="Container">
         <div className="inputs">
           <input
+            className="CreateInput"
             id="newShoe"
             onChange={this.handleInputChange}
             value={this.state.newShoe}
             placeholder="name"
           />
           <input
+            className="CreateInput"
             id="newImg"
             onChange={this.handleInputChange}
             value={this.state.newImg}
             placeholder="image"
           />
           <input
+            className="CreateInput"
             id="newPrice"
             onChange={this.handleInputChange}
             value={this.state.newPrice}
@@ -127,14 +130,18 @@ class Products extends React.Component {
             type="number"
           />
           <input
+            className="CreateInput"
             id="newSize"
             onChange={this.handleInputChange}
             value={this.state.newSize}
             placeholder="size"
             type="number"
           />
-          <button onClick={this.handleCreate}>Create</button>
+          <button className="btn" onClick={this.handleCreate}>
+            Create
+          </button>
         </div>
+
         <div className="products-container">{this.paintShoes()}</div>
       </div>
     );
