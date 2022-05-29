@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="home-page-container">
       <div className="homePage">
-        <h1 style={{ textAlign: "center", color: "white" }}></h1>
+        <h1 style={{ textAlign: "center", color: "white" }}>Nike</h1>
       </div>
       <div>
         <Link to="shoes">
